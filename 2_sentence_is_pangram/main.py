@@ -9,11 +9,7 @@ pytest ./2_sentence_is_pangram/test.py
 import string
 
 def is_sentence_is_pangram(sentence: str) -> bool:
-    original_elements = set()
+
     power_alphabet = len(string.ascii_lowercase)
-    for i in sentence:
-        original_elements.add(i.lower())
-    if len(original_elements) == power_alphabet:
-        return True
-    else:
-        return False
+    original_elements = set(sentence.lower())
+    return len(original_elements) == power_alphabet
